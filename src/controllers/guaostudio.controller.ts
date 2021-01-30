@@ -1,25 +1,33 @@
+// ---------- ADD IMPORTS -------------
+import {authenticate} from '@loopback/authentication';
+// ------------------------------------
 import {
   Count,
   CountSchema,
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
+  del, get,
+  getModelSchemaRef, param,
+
+
+  patch, post,
+
+
+
+
   put,
-  del,
+
   requestBody,
-  response,
+  response
 } from '@loopback/rest';
 import {Blog} from '../models';
 import {BlogRepository} from '../repositories';
 
+@authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
 export class GuaostudioController {
   constructor(
     @repository(BlogRepository)
