@@ -27,7 +27,8 @@ import {
 import {Blog} from '../models';
 import {BlogRepository} from '../repositories';
 
-@authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
+//@authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
+@authenticate.skip()
 export class GuaostudioController {
   constructor(
     @repository(BlogRepository)
@@ -113,7 +114,7 @@ export class GuaostudioController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @param.filter(Blog, {exclude: 'where'}) filter?: FilterExcludingWhere<Blog>
   ): Promise<Blog> {
     return this.blogRepository.findById(id, filter);
@@ -124,7 +125,7 @@ export class GuaostudioController {
     description: 'Blog PATCH success',
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody({
       content: {
         'application/json': {
@@ -142,7 +143,7 @@ export class GuaostudioController {
     description: 'Blog PUT success',
   })
   async replaceById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() blog: Blog,
   ): Promise<void> {
     await this.blogRepository.replaceById(id, blog);
@@ -152,7 +153,7 @@ export class GuaostudioController {
   @response(204, {
     description: 'Blog DELETE success',
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.blogRepository.deleteById(id);
   }
 }

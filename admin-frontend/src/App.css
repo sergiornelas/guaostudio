@@ -109,3 +109,10 @@ body {
   background: white;
   border: none;
 }
+
+.btn-grey {
+  padding: 20px 30px;
+  background-color: gray;
+  color: white;
+  font-size: 1.5rem;
+}

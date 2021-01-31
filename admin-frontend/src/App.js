@@ -11,9 +11,9 @@ const App = () => {
         <Main />
       </div>
       <div>
-        <Link to="/blogs/add">
+        {/* <Link to="/blogs/add">
           Icono
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
