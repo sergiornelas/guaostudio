@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 export class BlogItem extends Component {
   constructor(props) {
@@ -29,9 +30,10 @@ export class BlogItem extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <br />
         <button className="btn-grey">
-          <Link  to="/">
+          <Link  to="/blogs">
             Back
           </Link>
         </button>
@@ -40,7 +42,7 @@ export class BlogItem extends Component {
           <li>Content: {this.state.details.content}</li>
           <li>Date: {this.state.details.date}</li>
         </ul>
-        
+
         <button className="btn-grey">
           <Link to={`/blogs/edit/${this.state.details.id}`}>Edit</Link>
         </button>

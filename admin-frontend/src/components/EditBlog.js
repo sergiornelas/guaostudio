@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 export class EditBlog extends Component {
   constructor(props){
@@ -44,7 +45,7 @@ export class EditBlog extends Component {
         data: newBlog,
       })
       .then(response => {
-        this.props.history.push('/');
+        this.props.history.push('/blogs');
       })
       .catch(err => console.log(err));
   }
@@ -54,7 +55,7 @@ export class EditBlog extends Component {
     const newBlog = {
       title: e.target[0].value,
       content: e.target[1].value,
-      date: e.target[2].value,
+      date: new Date(),
     };
     this.editBlog(newBlog);
   }
@@ -72,9 +73,10 @@ export class EditBlog extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <br />
         <button className="btn-grey">
-          <Link to="/">Back</Link>
+          <Link to="/blogs">Back</Link>
         </button>
         <h1>Edit Blog</h1>
         <form onSubmit={this.onSubmit.bind(this)}>
@@ -86,9 +88,6 @@ export class EditBlog extends Component {
           onChange={this.handleInputChange}/>
           <label htmlFor="content">Content</label>
 
-          <input type="text" name="date" ref="date" defaultValue={this.state.date} 
-          onChange={this.handleInputChange}/>
-          <label htmlFor="date">Date</label>
           <input type="submit" value="Save" />
         </form>
       </div>

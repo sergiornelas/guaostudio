@@ -3,6 +3,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import BlogItem from './BlogItem'
+import {Link} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class Blogs extends Component{
   constructor(){
@@ -13,6 +15,19 @@ class Blogs extends Component{
   }
 
   componentDidMount(){
+
+
+    axios.interceptors.request.use(
+      config => {
+        config.headers.authorization = `Bearer ${localStorage.getItem('accToken')}`;
+        return config;
+      },
+      error => {
+        return Promise.reject(error);
+      }
+    );
+
+
     this.getBlogs();
   }
 
@@ -34,10 +49,14 @@ class Blogs extends Component{
     })
     return (
       <div>
+        <Navbar />
         <h1>Blogs</h1>
         <ul>
           {blogItems}
         </ul>
+        <button className="btn-grey">
+          <Link to="/blogs/add">Add blog</Link>
+        </button>
       </div>
     );
   }

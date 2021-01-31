@@ -69,7 +69,7 @@ export class GuaostudioController {
     return this.blogRepository.count(where);
   }
 
-  @authenticate.skip()
+  // @authenticate.skip()
   @get('/blogs')
   @response(200, {
     description: 'Array of Blog model instances',
@@ -107,7 +107,7 @@ export class GuaostudioController {
     return this.blogRepository.updateAll(blog, where);
   }
 
-  @authenticate.skip()
+  // @authenticate.skip()
   @get('/blogs/{id}')
   @response(200, {
     description: 'Blog model instance',
