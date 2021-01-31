@@ -27,8 +27,8 @@ import {
 import {Blog} from '../models';
 import {BlogRepository} from '../repositories';
 
-//@authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
-@authenticate.skip()
+@authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
+// @authenticate.skip()
 export class GuaostudioController {
   constructor(
     @repository(BlogRepository)
@@ -40,6 +40,8 @@ export class GuaostudioController {
     description: 'Blog model instance',
     content: {'application/json': {schema: getModelSchemaRef(Blog)}},
   })
+
+  // @authenticate.skip()
   async create(
     @requestBody({
       content: {
@@ -67,6 +69,7 @@ export class GuaostudioController {
     return this.blogRepository.count(where);
   }
 
+  @authenticate.skip()
   @get('/blogs')
   @response(200, {
     description: 'Array of Blog model instances',
@@ -104,6 +107,7 @@ export class GuaostudioController {
     return this.blogRepository.updateAll(blog, where);
   }
 
+  @authenticate.skip()
   @get('/blogs/{id}')
   @response(200, {
     description: 'Blog model instance',
