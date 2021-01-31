@@ -6,34 +6,30 @@ import Navbar from './Navbar';
 const AddBlog = (props) => {
   //const [token, setToken] = useState("");
 
-  let [token, setToken] = useState("");
+  // let [token, setToken] = useState("");
   // let isLogged = false;
 
+  let [userId, setuserId] = useState("");
+
   const addBlog = (newBlog) => {
-
-    console.log(token);
-
+    // console.log(token);
     const tokenCookie = localStorage.getItem('accToken');
-    console.log(tokenCookie);
+    // console.log(tokenCookie);
 
     // setToken(token=tokenCookie)
 
-    // if(isLogged===false){
-    //   // localStorage.setItem('accToken', "");
-    //   setToken(token="")
-    // } else {
-    //   setToken(token=tokenCookie)
-    // }
+    
 
-    axios.interceptors.request.use(
-      config => {
-        config.headers.authorization = `Bearer ${token}`;
-        return config;
-      },
-      error => {
-        return Promise.reject(error);
-      }
-    );
+    // //Validate user is logged in.
+    // axios.interceptors.request.use(
+    //   config => {
+    //     config.headers.authorization = `Bearer ${token}`;
+    //     return config;
+    //   },
+    //   error => {
+    //     return Promise.reject(error);
+    //   }
+    // );
 
     axios
       .request({
@@ -49,12 +45,33 @@ const AddBlog = (props) => {
       .catch(err => console.log(err));
   }
 
+  // let user = ""
+
+  //get userID
+  axios
+  .request({
+    method: 'get',
+    url: 'http://localhost:3000/whoAmI',
+    // data: newBlog,
+  })
+  .then(response => {
+    // this.props.history.push('/');
+    console.log("usuario: ", response)
+    // props.history.push('/blogs');
+    setuserId(userId=response.data);
+  })
+  .catch(err => console.log(err))
+  
+
   const onSubmit = e => {
     e.preventDefault();
     const newBlog = {
       title: e.target[0].value,
       content: e.target[1].value,
+      
       date: new Date(),
+      // user: "Pepito"
+      user: userId
     };
     addBlog(newBlog);
   }

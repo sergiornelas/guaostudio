@@ -27,6 +27,18 @@ export class Blog extends Entity {
   date?: string;
 
 
+
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  user: string;
+
+
+
+
+
   constructor(data?: Partial<Blog>) {
     super(data);
   }

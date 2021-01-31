@@ -16,7 +16,6 @@ class Blogs extends Component{
 
   componentDidMount(){
 
-
     axios.interceptors.request.use(
       config => {
         config.headers.authorization = `Bearer ${localStorage.getItem('accToken')}`;
@@ -26,7 +25,6 @@ class Blogs extends Component{
         return Promise.reject(error);
       }
     );
-
 
     this.getBlogs();
   }

@@ -41,6 +41,7 @@ export class BlogItem extends Component {
         <ul>
           <li>Content: {this.state.details.content}</li>
           <li>Date: {this.state.details.date}</li>
+          <li>user: {this.state.details.user}</li>
         </ul>
 
         <button className="btn-grey">
