@@ -3,7 +3,7 @@ Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend
 
 Mongo debe estar instalado.
 
-Primeramente se crea un usuario a traves del UserController de Loopback 4, despues ya se puede experimentar con la aplicación web.
+Primeramente se crea un usuario a traves del UserController de Loopback 4, después ya se puede experimentar con la aplicación web.
 
 ✔️ Login
 
@@ -19,7 +19,9 @@ Primeramente se crea un usuario a traves del UserController de Loopback 4, despu
 
 ✔️ Autenticación usando JWT de LB4
 
-No me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), tampoco para hacer la web app responsiva. Quedará pendiente.
+La verdad es que jamás había utilizado Loopback entonces me llevó tiempo adicional por examinar la documentación.
+Por esto mismo no me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), tampoco para hacer la web app responsiva. Quedará pendiente.
+
 Se realizó el estilo con CSS puro sin librerías.
 
 
