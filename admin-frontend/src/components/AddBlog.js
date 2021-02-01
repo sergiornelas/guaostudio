@@ -44,25 +44,23 @@ const AddBlog = props => {
   };
 
   return (
-    <div>
+    <div className={'container'}>
       <Navbar />
-      <br />
-      <button className="btn-grey">
-        <Link to="/blogs">Back</Link>
-      </button>
 
-      <br />
-      <br />
-      <br />
-      <h1>Add blog</h1>
+      <h1 className={'title'}>Add blog</h1>
       <form onSubmit={onSubmit.bind(this)}>
-        <input type="text" name="title" />
-        <label htmlFor="title">Title</label>
+        <h4 className={'subtitle'}>Title</h4>
+        <input type="text" name="title" className={"input_style"}/>
 
-        <input type="text" name="content" />
-        <label htmlFor="content">Content</label>
+        <h4 className={'subtitle'}>Content</h4>
+        <textarea type="text" name="content" rows="5" className={"input_style_textArea"}/>
 
-        <input type="submit" value="Save" />
+        <div className={'center_buttons'}>
+          <Link to="/blogs">
+            <button className="btn-grey">Back</button>
+          </Link>
+          <input className={'input_button'} type="submit" value="Submit" />
+        </div>
       </form>
 
       <br />

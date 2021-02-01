@@ -11,14 +11,31 @@ export class BlogItem extends Component {
   }
 
   render() {
+    const x = () => {
+      // const formattedDate = new Date(this.state.item.date)
+      return this.state.item.date;
+    };
     return (
-      <div className={blogsCSS.box_container}>
-        <Link to={`/blogs/${this.state.item.id}`} className={"no-decoration"}>
-          {<p className={blogsCSS.box_content}>Title: {this.state.item.title}</p>}
-          <br/>
-          {<p>Date created: {this.state.item.date}</p>}
-        </Link>
-      </div>
+      <Link to={`/blogs/${this.state.item.id}`} className={'no-decoration'}>
+        <div className={blogsCSS.box_container}>
+          {
+            <div className={blogsCSS.box_content_title}>
+              Title: {this.state.item.title}
+            </div>
+          }
+          {
+            <div className={blogsCSS.box_content}>
+              <span className={"bold"}>Author ID: </span>
+              {this.state.item.user}
+            </div>
+          }
+          {
+            <div className={blogsCSS.box_content}>
+              <span className={"bold"}>Created date: </span> {x()}
+            </div>
+          }
+        </div>
+      </Link>
     );
   }
 }

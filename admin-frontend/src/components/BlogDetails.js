@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
+import blogsDetailCSS from '../styles/blogDetail.module.css';
 
 export class BlogItem extends Component {
   constructor(props) {
@@ -12,6 +13,17 @@ export class BlogItem extends Component {
   }
 
   componentDidMount() {
+    axios.interceptors.request.use(
+      config => {
+        config.headers.authorization = `Bearer ${localStorage.getItem(
+          'accToken',
+        )}`;
+        return config;
+      },
+      error => {
+        return Promise.reject(error);
+      },
+    );
     this.getBlog();
   }
 
@@ -27,22 +39,23 @@ export class BlogItem extends Component {
 
   render() {
     return (
-      <div>
+      <div className={'container'}>
         <Navbar />
-        <br />
-        <button className="btn-grey">
-          <Link to="/blogs">Back</Link>
-        </button>
-        <h1>{this.state.details.title}</h1>
-        <ul>
-          <li>Content: {this.state.details.content}</li>
-          <li>Date: {this.state.details.date}</li>
-          <li>user: {this.state.details.user}</li>
-        </ul>
+        <h1 className={'title'}>{this.state.details.title}</h1>
+        <br/>
+        <p className={blogsDetailCSS.info}><span className={"bold"}>Date: </span>{this.state.details.date}</p>
+        <p className={blogsDetailCSS.info}><span className={"bold"}>User ID: </span>{this.state.details.user}</p>
+        <div className={blogsDetailCSS.detailContent}>
+          {this.state.details.content}
+        </div>
 
-        <button className="btn-grey">
-          <Link to={`/blogs/edit/${this.state.details.id}`}>Edit</Link>
-        </button>
+        <Link to="/blogs">
+          <button className="btn-grey">Back</button>
+        </Link>
+
+        <Link to={`/blogs/edit/${this.state.details.id}`}>
+          <button className="btn-grey-special">Edit </button>
+        </Link>
       </div>
     );
   }

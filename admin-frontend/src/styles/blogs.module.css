@@ -1,11 +1,47 @@
 .box_container{
-  margin: 20px;
+  margin: 3.5rem 2rem;
   border: 1.5px rgb(48, 46, 46) solid;
   border-radius: 24px;
+}
+
+.box_container:hover{
+  background-color: rgba(122, 122, 122, .3);
+  border: 1.5px rgb(0, 4, 241) solid;
+}
+
+.box_content_title {
+  font-size: 1.8rem;
+  background-color: rgb(216, 220, 228);
+  border-radius: 24px 24px 0px 0px;
+  color:rgb(37, 36, 36);
+  font-weight: bold;
+  padding: .7rem;
   text-align: center;
 }
 
-.box_contentj {
-  display: inline-block;
+.box_content {
+  font-size: 1.5rem;
+  padding: 1.5rem 3rem;
 }
 
+.add_blog_botton {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 4.5rem;
+  right: 0;
+  margin-right: 6.5rem;
+  z-index: 2;
+  padding: 25px;
+  border-radius: 50% ;
+  background-color: rgb(255, 117, 25);
+  color: white;
+  font-size: 1.4rem;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.add_blog_botton:hover{
+  background-color: rgb(172, 69, 0);
+  box-shadow: 5px 5px 5px 1px rgb(36, 15, 1);
+}

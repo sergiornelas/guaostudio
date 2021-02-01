@@ -3,6 +3,7 @@ import axios from 'axios';
 import BlogItem from './BlogItem';
 import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
+import blogsCSS from '../styles/blogs.module.css';
 
 class Blogs extends Component {
   constructor() {
@@ -41,14 +42,16 @@ class Blogs extends Component {
       return <BlogItem key={blog.id} item={blog} />;
     });
     return (
-      <div className={"container"}>
+      <div className={'container'}>
         <Navbar />
-        <h1 className={"title"}>Blogs</h1>
+        <h1 className={'title'}>Blogs</h1>
 
         {blogItems}
-        <button className="btn-grey">
-          <Link to="/blogs/add">Add blog</Link>
-        </button>
+
+        <Link to="/blogs/add" >
+          <button className={blogsCSS.add_blog_botton}>Add<div>Blog</div> </button>
+        </Link>
+
       </div>
     );
   }

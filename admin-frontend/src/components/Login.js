@@ -45,7 +45,7 @@ const Login = props => {
 
       <div className={loginCSS.container_login}>
         <form onSubmit={login.bind(this)}>
-          <h1 className={loginCSS.subtitle}>Login</h1>
+          <h1 className={"subtitle"}>Login</h1>
           <ul>
             <li className={loginCSS.list_element}>
               <input
