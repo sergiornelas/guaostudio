@@ -1,27 +1,13 @@
 import '../App.css';
 import Navbar from './Navbar';
 import React from 'react';
-import axios from 'axios';
 
 const About = () => {
-  axios.interceptors.request.use(
-    config => {
-      config.headers.authorization = `Bearer ${localStorage.getItem(
-        'accToken',
-      )}`;
-      return config;
-    },
-    error => {
-      return Promise.reject(error);
-    },
-  );
-
   return (
     <div>
       <Navbar />
-      <h1>About</h1>
-
-      <p>
+      <h1 className="title">About</h1>
+      <p className="subtitle">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

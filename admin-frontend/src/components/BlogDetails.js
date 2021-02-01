@@ -49,13 +49,15 @@ export class BlogItem extends Component {
           {this.state.details.content}
         </div>
 
-        <Link to="/blogs">
-          <button className="btn-grey">Back</button>
-        </Link>
+        <div className="center_buttons">
+          <Link to="/blogs">
+            <button className="btn-grey">Back</button>
+          </Link>
 
-        <Link to={`/blogs/edit/${this.state.details.id}`}>
-          <button className="btn-grey-special">Edit </button>
-        </Link>
+          <Link to={`/blogs/edit/${this.state.details.id}`}>
+            <button className="btn-grey-special">Edit </button>
+          </Link>
+        </div>
       </div>
     );
   }

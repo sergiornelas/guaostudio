@@ -31,13 +31,13 @@ const AddUser = (props) => {
     <div className={'container'}>
       <Navbar />
 
-      <h1 className={'title'}>Add blog</h1>
+      <h1 className={'title'}>Add User</h1>
       <form onSubmit={onSubmit.bind(this)}>
         <h4 className={'subtitle'}>Email</h4>
-        <input type="text" name="email" className={"input_style"}/>
+        <input type="text" name="email" className={"input_style_user"}/>
 
         <h4 className={'subtitle'}>Password</h4>
-        <input type="text" name="password" className={"input_style_textArea"}/>
+        <input type="password" name="password" className={"input_style_user"}/>
 
         <div className={'center_buttons'}>
           <Link to="/blogs">

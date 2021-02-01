@@ -12,12 +12,17 @@ const Navbar = () => {
       <header className="main-header">
         <nav className="main-nav">
           <ul className="main-nav__items">
-            <li className="main-nav__item">
-              <Link to="/addUser">Add user</Link>
-            </li>
+
             <li className="main-nav__item">
               <Link to="/blogs">Blogs</Link>
             </li>
+            <li className="main-nav__item">
+              <Link to="/addUser">Add User</Link>
+            </li>
+            <li className="main-nav__item">
+              <Link to="/blogs/add">Add Blog</Link>
+            </li>
+            
             <li className="main-nav__item">
               <Link to="/about">About</Link>
             </li>

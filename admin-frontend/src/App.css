@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+*:focus{
+  border:2px black solid;
+  outline: none;
+}
+
 body, html {
   /* height: 100%; */
   /* overflow: hidden; */
@@ -32,7 +37,7 @@ ul{
   width: calc(100% - 3rem);
 }
 
-.main-nav__item {
+.main-nav__item{
   display: inline-block;
   margin: 0 1rem;
   font-size: 1.6rem;
@@ -99,13 +104,15 @@ ul{
 }
 
 .btn-grey, .btn-grey-special {
-  padding: 15px;
+  padding: 1rem 2rem;
   background-color: gray;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0 3rem;
   border-radius: 15px;
   cursor: pointer;
+  width: 20%;
+  border: none;
 }
 
 .btn-grey:hover{
@@ -121,15 +128,28 @@ ul{
   background-color: rgb(172, 69, 0);
 }
 
-.input_style{
+.input_style, .input_style_user{
   font-size: 1.1rem;
   width: 60%;
   padding: .5rem;
   border:none;
-  border-bottom: 1.3px black solid;
-  background-color: rgb(226, 219, 219);
+  /* border-bottom: 1.3px black solid; */
+  border-radius: 7px;
+  background-color: rgb(220, 209, 209);
   display: block;
   margin: 0 auto;
+}
+
+.input_style:hover{
+  background-color: rgb(242, 233, 233);
+}
+
+.input_style_user{
+  width: 30%;
+}
+
+.input_style_user:hover{
+  background-color: rgb(242, 233, 233);
 }
 
 .input_style_textArea{
@@ -138,14 +158,17 @@ ul{
   width: 60%;
   padding: .5rem;
   border:none;
+  border-radius: 7px;
   border-bottom: 1.3px black solid;
-  background-color: rgb(226, 219, 219);
+  background-color: rgb(220, 209, 209);
+
   display: block;
   margin: 0 auto;
 }
 
-
-
+.input_style_textArea:hover{
+  background-color: rgb(242, 233, 233);
+}
 
 .center_buttons{
   text-align: center; 
@@ -153,9 +176,9 @@ ul{
 }
 
 .input_button{
-  width: 30%;
+  width: 21%;
   margin: 1rem auto;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   background-color: rgb(255, 117, 25);
   color:rgb(255, 255, 255);
   padding: 1rem 2rem;
@@ -167,5 +190,4 @@ ul{
 
 .input_button:hover{
   background-color: rgb(172, 69, 0);
-  box-shadow: 5px 5px 5px 1px rgb(36, 15, 1);
 }

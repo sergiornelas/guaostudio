@@ -4,6 +4,7 @@ import loginCSS from '../styles/login.module.css';
 
 const Login = props => {
   let [token, setToken] = useState('');
+
   const getToken = credentials => {
     axios
       .request({
@@ -13,8 +14,8 @@ const Login = props => {
       })
       .then(response => {
         setToken((token = response.data.token));
-        console.log(token);
         localStorage.setItem('accToken', token);
+
         axios.interceptors.request.use(
           config => {
             config.headers.authorization = `Bearer ${token}`;
@@ -24,10 +25,13 @@ const Login = props => {
             return Promise.reject(error);
           },
         );
+
         console.log('logged!');
         props.history.push('/blogs');
       })
-      .catch(err => console.log(err));
+
+      .catch(err => console.log(err)
+      );
   };
 
   const login = e => {
@@ -41,11 +45,11 @@ const Login = props => {
 
   return (
     <div className={loginCSS.login_all}>
-      <h1 className={"title"}>Create your own Blog!</h1>
+      <h1 className={'title'}>Create your own Blog!</h1>
 
       <div className={loginCSS.container_login}>
         <form onSubmit={login.bind(this)}>
-          <h1 className={"subtitle"}>Login</h1>
+          <h1 className={'subtitle'}>Login</h1>
           <ul>
             <li className={loginCSS.list_element}>
               <input

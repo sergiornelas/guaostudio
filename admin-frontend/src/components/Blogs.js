@@ -48,6 +48,10 @@ class Blogs extends Component {
 
         {blogItems}
 
+        <Link to="/addUser" >
+          <button className={blogsCSS.add_user_botton}>Add<div>User</div> </button>
+        </Link>
+
         <Link to="/blogs/add" >
           <button className={blogsCSS.add_blog_botton}>Add<div>Blog</div> </button>
         </Link>
