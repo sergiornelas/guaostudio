@@ -2,8 +2,11 @@
 Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend (React.js)
 
 ✔️ Login
+
 ✔️ Crear blogs
+
 ✔️ Editar blogs
+
 ✔️ Crear usuarios
 ✔️ Usar LB4
 ✔️ MongoDB como database connector
