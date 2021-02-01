@@ -30,7 +30,7 @@ Se realizó el estilo con CSS puro sin librerías.
 <p float="left">
   <img src="https://github.com/sergiornelas/guaostudio/blob/main/readmeImages/1.jpeg" width="45%">
   <img src="https://github.com/sergiornelas/guaostudio/blob/main/readmeImages/2.jpeg" width="50%">
-  <img src="https://github.com/sergiornelas/guaostudio/blob/main/readmeImages/3.jpeg" width="50%">
+  <img src="https://github.com/sergiornelas/guaostudio/blob/main/readmeImages/3.jpeg" width="45%">
   <img src="https://github.com/sergiornelas/guaostudio/blob/main/readmeImages/4.jpeg" width="50%">
 </p>
 
