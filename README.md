@@ -1,3 +1,18 @@
+# Notas Importantes
+Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend (React.js)
+
+✔️ Login
+✔️ Crear blogs
+✔️ Editar blogs
+✔️ Crear usuarios
+✔️ Usar LB4
+✔️ MongoDB como database connector
+✔️ Autenticación usando JWT de LB4
+
+No me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), ni para hacer la web app responsiva.
+Se realizó el estilo con CSS puro.
+
+
 # guaostudio
 
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
