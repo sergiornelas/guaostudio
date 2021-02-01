@@ -1,5 +1,5 @@
 # Importante
-Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend (React.js).
+Hay que utilizar dos puertos: uno para backend (Loopback 4) y otro para frontend (React.js).
 
 Mongo DB debe estar instalado.
 
