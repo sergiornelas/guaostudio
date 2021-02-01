@@ -13,6 +13,9 @@ const Navbar = () => {
         <nav className="main-nav">
           <ul className="main-nav__items">
             <li className="main-nav__item">
+              <Link to="/addUser">Add user</Link>
+            </li>
+            <li className="main-nav__item">
               <Link to="/blogs">Blogs</Link>
             </li>
             <li className="main-nav__item">

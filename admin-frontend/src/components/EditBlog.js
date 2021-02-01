@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
-import editBlogCSS from '../styles/editBlog.module.css';
 
 export class EditBlog extends Component {
   constructor(props) {

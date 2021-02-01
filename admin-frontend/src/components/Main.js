@@ -6,6 +6,7 @@ import BlogDetails from './BlogDetails';
 import AddBlog from './AddBlog';
 import EditBlog from './EditBlog';
 import Login from './Login';
+import AddUser from './AddUser'
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/blogs" component={Blogs} />
+          <Route exact path="/addUser" component={AddUser} />
           <Route exact path="/about" component={About} />
           <Route exact path="/blogs/add" component={AddBlog} />
           <Route exact path="/blogs/edit/:id" component={EditBlog} />
