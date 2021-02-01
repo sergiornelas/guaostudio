@@ -1,5 +1,9 @@
 # Notas Importantes
-Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend (React.js)
+Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend (React.js).
+
+Mongo debe estar instalado.
+
+Primeramente se crea un usuario a traves del UserController de Loopback 4, despues ya se puede experimentar con la aplicación web.
 
 ✔️ Login
 
@@ -8,12 +12,15 @@ Hay que utilizar dos puertos, uno para backend (Loopback 4) y otro para frontend
 ✔️ Editar blogs
 
 ✔️ Crear usuarios
+
 ✔️ Usar LB4
+
 ✔️ MongoDB como database connector
+
 ✔️ Autenticación usando JWT de LB4
 
-No me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), ni para hacer la web app responsiva.
-Se realizó el estilo con CSS puro.
+No me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), tampoco para hacer la web app responsiva. Quedará pendiente.
+Se realizó el estilo con CSS puro sin librerías.
 
 
 # guaostudio
