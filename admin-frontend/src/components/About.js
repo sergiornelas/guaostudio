@@ -4,19 +4,17 @@ import React from 'react';
 import axios from 'axios';
 
 const About = () => {
-
-
-    axios.interceptors.request.use(
-      config => {
-        config.headers.authorization = `Bearer ${localStorage.getItem(
-          'accToken',
-        )}`;
-        return config;
-      },
-      error => {
-        return Promise.reject(error);
-      },
-    );
+  axios.interceptors.request.use(
+    config => {
+      config.headers.authorization = `Bearer ${localStorage.getItem(
+        'accToken',
+      )}`;
+      return config;
+    },
+    error => {
+      return Promise.reject(error);
+    },
+  );
 
   return (
     <div>

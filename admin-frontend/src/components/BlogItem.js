@@ -1,21 +1,26 @@
-import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import blogsCSS from '../styles/blogs.module.css';
 
 export class BlogItem extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      item:props.item
-    }
+      item: props.item,
+    };
   }
 
   render() {
     return (
-      <li>
-        <Link to={`/blogs/${this.state.item.id}`}>{this.state.item.title}</Link>
-      </li>
-    )
+      <div className={blogsCSS.box_container}>
+        <Link to={`/blogs/${this.state.item.id}`} className={"no-decoration"}>
+          {<p className={blogsCSS.box_content}>Title: {this.state.item.title}</p>}
+          <br/>
+          {<p>Date created: {this.state.item.date}</p>}
+        </Link>
+      </div>
+    );
   }
 }
 
-export default BlogItem
+export default BlogItem;

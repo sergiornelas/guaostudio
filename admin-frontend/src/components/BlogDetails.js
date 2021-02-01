@@ -20,9 +20,7 @@ export class BlogItem extends Component {
     axios
       .get(`http://localhost:3000/blogs/${blogId}`)
       .then(response => {
-        this.setState({details: response.data}, () => {
-          console.log(this.state);
-        });
+        this.setState({details: response.data});
       })
       .catch(err => console.log(err));
   }
@@ -33,9 +31,7 @@ export class BlogItem extends Component {
         <Navbar />
         <br />
         <button className="btn-grey">
-          <Link  to="/blogs">
-            Back
-          </Link>
+          <Link to="/blogs">Back</Link>
         </button>
         <h1>{this.state.details.title}</h1>
         <ul>
@@ -47,7 +43,6 @@ export class BlogItem extends Component {
         <button className="btn-grey">
           <Link to={`/blogs/edit/${this.state.details.id}`}>Edit</Link>
         </button>
-
       </div>
     );
   }

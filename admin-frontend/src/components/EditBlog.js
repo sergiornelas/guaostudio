@@ -4,16 +4,16 @@ import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
 
 export class EditBlog extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       id: '',
       title: '',
       content: '',
       date: '',
-    }
+    };
 
-    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -30,17 +30,15 @@ export class EditBlog extends Component {
           title: response.data.title,
           content: response.data.content,
           date: response.data.date,
-        }, () => {
-          console.log(this.state);
         });
       })
       .catch(err => console.log(err));
   }
 
-  editBlog(newBlog){
+  editBlog(newBlog) {
     axios
       .request({
-        method: 'put',
+        method: 'patch',
         url: `http://localhost:3000/blogs/${this.state.id}`,
         data: newBlog,
       })
@@ -60,14 +58,14 @@ export class EditBlog extends Component {
     this.editBlog(newBlog);
   }
 
-  handleInputChange(e){
+  handleInputChange(e) {
     const target = e.target;
     const value = target.value;
     const name = target.name;
 
     this.setState({
-      [name]: value
-    })
+      [name]: value,
+    });
   }
 
   render() {
@@ -80,12 +78,22 @@ export class EditBlog extends Component {
         </button>
         <h1>Edit Blog</h1>
         <form onSubmit={this.onSubmit.bind(this)}>
-          <input type="text" name="title" ref="title" defaultValue={this.state.title}
-          onChange={this.handleInputChange} />
+          <input
+            type="text"
+            name="title"
+            ref="title"
+            defaultValue={this.state.title}
+            onChange={this.handleInputChange}
+          />
           <label htmlFor="title">Title</label>
 
-          <input type="text" name="content" ref="content" defaultValue={this.state.content} 
-          onChange={this.handleInputChange}/>
+          <input
+            type="text"
+            name="content"
+            ref="content"
+            defaultValue={this.state.content}
+            onChange={this.handleInputChange}
+          />
           <label htmlFor="content">Content</label>
 
           <input type="submit" value="Save" />

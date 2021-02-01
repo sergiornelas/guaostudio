@@ -1,0 +1,11 @@
+.box_container{
+  margin: 20px;
+  border: 1.5px rgb(48, 46, 46) solid;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.box_contentj {
+  display: inline-block;
+}
+
