@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Navbar from './Navbar';
 
 const AddUser = (props) => {
-  let [userId, setuserId] = useState('');
-
-  const addUser = newUser => {
-    // const tokenCookie = localStorage.getItem('accToken');
+  const addNewUser = newUser => {
+    
     axios
       .request({
         method: 'post',
@@ -15,22 +13,10 @@ const AddUser = (props) => {
         data: newUser,
       })
       .then(response => {
-        // console.log('CONGRATULATIONS!');
         props.history.push('/blogs');
       })
       .catch(err => console.log(err));
   };
-
-  // axios
-  //   .request({
-  //     method: 'get',
-  //     url: 'http://localhost:3000/whoAmI',
-  //   })
-  //   .then(response => {
-  //     // console.log('usuario: ', response);
-  //     setuserId((userId = response.data));
-  //   })
-  //   .catch(err => console.log(err));
 
   const onSubmit = e => {
     e.preventDefault();
@@ -38,7 +24,7 @@ const AddUser = (props) => {
       email: e.target[0].value,
       password: e.target[1].value,
     };
-    addUser(newUser);
+    addNewUser(newUser);
   };
 
   return (

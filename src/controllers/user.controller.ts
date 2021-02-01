@@ -63,6 +63,7 @@ export class UserController {
     @repository(UserRepository) protected userRepository: UserRepository,
   ) {}
 
+  // @authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
   @post('/users/login', {
     responses: {
       '200': {
@@ -117,6 +118,7 @@ export class UserController {
     return currentUserProfile[securityId];
   }
 
+  @authenticate('jwt') // <---- Apply the @authenticate decorator at the class level
   @post('/signup', {
     responses: {
       '200': {
