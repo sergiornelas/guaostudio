@@ -22,7 +22,7 @@ Primeramente se crea un usuario a traves del UserController de Loopback 4, despu
 ✔️ Si no esta loggeado no se permite: Visualizar los blogs, Crear Blog, Editar Blog, Crear Usuario.
 
 La verdad es que jamás había utilizado Loopback, entonces me llevó tiempo adicional por examinar la documentación.
-Por esto mismo no me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), tampoco para hacer la web app responsiva. Quedará pendiente.
+Por esto mismo no me ajustó el tiempo para hacer las validaciones (mensajes de éxito/error), tampoco para hacer la web app responsiva y otros detalles. Quedará pendiente.
 
 Se realizó el estilo con CSS puro sin librerías.
 
